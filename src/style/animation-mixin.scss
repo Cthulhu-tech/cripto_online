@@ -1,0 +1,6 @@
+@mixin animation-loading($name) {
+  @keyframes #{$name} {
+    0% {margin-left: -50%;}
+    100% {margin-left: 100%;}
+  }
+}

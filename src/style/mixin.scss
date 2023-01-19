@@ -1,0 +1,6 @@
+@mixin beforeAndAfter {
+    &::before, &::after {
+        transform: rotate(90deg);
+        background-color: $gray300;
+    }
+}
