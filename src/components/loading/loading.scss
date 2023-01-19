@@ -1,0 +1,35 @@
+@import '../../style/animation-mixin.scss';
+@import '../../style/color.scss';
+
+@include animation-loading(loading);
+
+.loading {
+    gap: 5px;
+    width: 100%;
+    height: 100%;
+    padding: 5px;
+    display: grid;
+    position: relative;
+    border-radius: 4px;
+    align-items: start;
+    background-color: $gray200;
+    grid-template-columns: 1fr; 
+    grid-template-rows: 0.3fr 1.4fr 0.8fr;
+}
+
+.loading-board {
+    min-width: 100%;
+    overflow: hidden;
+    min-height: 100%;
+    position: relative;
+    border-radius: 6px;
+    background-color: $gray100;
+}
+
+.loading-animation {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    animation: loading 2s infinite;
+    background: linear-gradient(to right, $gray100 8%, #dedede 18%, $gray100 33%);
+}
