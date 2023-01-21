@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 
-export const useWebsocket = (urlSocket: string, connectionMessage: string) => {
+export const useWebsocket = (urlSocket: string, connectionMessage: string, callback: (message: MessageEvent<any>) => void) => {
     
     const [socketState, setSocket] = useState<WebSocket>()
 
@@ -12,6 +12,10 @@ export const useWebsocket = (urlSocket: string, connectionMessage: string) => {
         socket.onclose = () => console.log("websocket closed")
 
         setSocket(socket)
+
+        socket.addEventListener("message", (event) => {
+            callback(event)
+        })        
 
         return () => {
             
